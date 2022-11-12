@@ -21,19 +21,42 @@ Rectangle {
         x: 35
     }
 
-    RoundButton {
-        id: lagoonRoundButton
-        x: 411
-        y: 81
-        width: 69
-        height: 28
-        text: "Lagoon"
-        anchors.right: parent.right
-        anchors.rightMargin: 166
-        font.pointSize: 8
-        font.capitalization: Font.MixedCase
-        font.bold: true
-        checkable: false
+    Item {
+        id: roundButtonItem
+        x: 417
+        y: 69
+        width: 192
+        height: 47
+
+        RoundButton {
+            id: lagoonRoundButton
+            y: 11
+            width: 69
+            height: 28
+            text: "Lagoon"
+            anchors.horizontalCenterOffset: -50
+            anchors.horizontalCenter: parent.horizontalCenter
+            icon.color: "#4091e2"
+            font.pointSize: 8
+            font.capitalization: Font.MixedCase
+            font.bold: true
+            checkable: false
+        }
+
+        RoundButton {
+            id: spaceRoundButton
+            y: 9
+            width: 69
+            height: 30
+            text: "Space"
+            anchors.horizontalCenterOffset: 50
+            anchors.horizontalCenter: parent.horizontalCenter
+            checkable: false
+            font.pointSize: 8
+            font.bold: true
+            icon.color: "#c5a12a"
+            font.capitalization: Font.MixedCase
+        }
     }
 
     states: [
@@ -46,7 +69,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:1.5}D{i:3}D{i:2}
+    D{i:0;formeditorZoom:1.5}D{i:5}D{i:3}D{i:4}
 }
 ##^##*/
 
