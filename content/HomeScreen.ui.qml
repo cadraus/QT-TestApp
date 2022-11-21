@@ -25,37 +25,132 @@ Rectangle {
         id: roundButtonItem
         x: 417
         y: 69
-        width: 192
-        height: 47
+        width: 172
+        height: 72
 
         RoundButton {
             id: lagoonRoundButton
-            y: 11
             width: 69
             height: 28
+            radius: 6
             text: "Lagoon"
-            anchors.horizontalCenterOffset: -50
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.left: parent.left
+            antialiasing: false
+            focusPolicy: Qt.StrongFocus
+            autoExclusive: true
+            anchors.leftMargin: 10
+            anchors.verticalCenterOffset: 0
             icon.color: "#4091e2"
             font.pointSize: 8
             font.capitalization: Font.MixedCase
             font.bold: true
-            checkable: false
+            checkable: true
         }
 
         RoundButton {
             id: spaceRoundButton
-            y: 9
             width: 69
             height: 30
+            radius: 6
             text: "Space"
-            anchors.horizontalCenterOffset: 50
-            anchors.horizontalCenter: parent.horizontalCenter
-            checkable: false
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
+            autoExclusive: true
+            anchors.rightMargin: 10
+            checkable: true
             font.pointSize: 8
             font.bold: true
             icon.color: "#c5a12a"
             font.capitalization: Font.MixedCase
+        }
+    }
+
+    Item {
+        id: radioButtonItem
+        x: 417
+        y: 139
+        width: 172
+        height: 76
+        visible: lagoonRoundButton.checked || spaceRoundButton.checked
+
+        Image {
+            id: alienPreviewImage
+            width: 49
+            height: 27
+            anchors.left: parent.left
+            anchors.top: parent.top
+            source: "images/alien.png"
+            anchors.leftMargin: 32
+            anchors.topMargin: 7
+            fillMode: Image.PreserveAspectFit
+        }
+
+        RadioButton {
+            id: alienRadioButton
+            x: 74
+            width: 80
+            height: 28
+            text: qsTr("Alien")
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.topMargin: 7
+            anchors.rightMargin: 18
+        }
+
+        Image {
+            id: catPreviewImage
+            y: 41
+            width: 49
+            height: 27
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+            source: "images/cat.png"
+            anchors.leftMargin: 33
+            anchors.bottomMargin: 8
+            fillMode: Image.PreserveAspectFit
+        }
+        RadioButton {
+            id: catRadioButton
+            x: 74
+            y: 41
+            width: 80
+            height: 28
+            text: qsTr("Cat")
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 7
+            anchors.rightMargin: 18
+        }
+    }
+
+    Item {
+        id: glassessSliderItem
+        x: 417
+        y: 211
+        width: 172
+        height: 40
+
+        Image {
+            id: glassesPreviewImage
+            y: 18
+            width: 41
+            height: 9
+            anchors.left: parent.left
+            source: "images/sunglasses.png"
+            anchors.leftMargin: 0
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Switch {
+            id: glassesSwitch
+            x: 37
+            y: 6
+            width: 133
+            height: 28
+            text: qsTr("Sunglasses")
+            anchors.right: parent.right
+            anchors.rightMargin: 2
         }
     }
 
@@ -69,7 +164,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:1.5}D{i:5}D{i:3}D{i:4}
+    D{i:0;formeditorZoom:1.5}D{i:11}
 }
 ##^##*/
 
